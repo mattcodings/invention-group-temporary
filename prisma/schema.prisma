@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Invention {
+  id String @id @default (uuid())
+  userId String
+  nameOfInventor String
+  nameOfInvention String
+  priceForApproval Int
+  imagePath String
+  description String
+  isApproved Boolean @default(false)
+  creationDate DateTime @default(now())
+  approvedDate DateTime
+  paidFor Boolean @default(false)
+  monthlySales Sales[]
+}
+
+model Sales {
+  salesId String @unique
+  january Int @default(0)
+february Int @default(0)
+march Int @default(0)
+april Int @default(0)
+may Int @default(0)
+june Int @default(0)
+july Int @default(0)
+august Int @default(0)
+september Int @default(0)
+october Int @default(0)
+november Int @default(0)
+december Int @default(0)
+  invention Invention @relation(fields: [salesId], references: [id], onDelete: Cascade)
+}
