@@ -5,7 +5,6 @@ import { IoLogOutOutline } from "react-icons/io5";
 import Link from "next/link";
 import SmallNavMenu from "@/components/nav/SmallNavMenu";
 import Image from "next/image";
-
 import StaticNavbar from "@/components/nav/StaticNavbar";
 
 const links = [

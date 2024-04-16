@@ -4,7 +4,7 @@ import { FaChartSimple, FaUserPlus } from "react-icons/fa6";
 const UserToDo = () => {
   return (
     <div className="bg-secondary py-40">
-      <div className="flex w-[70%] mx-auto justify-evenly">
+      <div className="flex w-[70%] flex-wrap mx-auto gap-y-20 justify-evenly">
         <Link href="/sign-in">
           <div className="card w-96 bg-base-100 shadow-xl p-8">
             <FaUserPlus className="text-8xl mx-auto" />
